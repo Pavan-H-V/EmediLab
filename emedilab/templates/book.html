@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Lab Tests - EmediLab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='book.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Emedi<span>Lab</span></h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="{{ url_for('tests') }}">Tests</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h2>Available Lab Tests</h2>
+    <div class="cards-container">
+
+      <div class="card">
+        <h3>Blood Test</h3>
+        <p>Includes CBC, Hemoglobin, and more.</p>
+        <a href="{{ url_for('blood') }}"><button>Book Now</button></a>
+      </div>
+
+      <div class="card">
+        <h3>Urine Test</h3>
+        <p>General health check and infection detection.</p>
+        <button>Coming Soon</button>
+      </div>
+
+      <div class="card">
+        <h3>COVID-19 Test</h3>
+        <p>RT-PCR Test for COVID-19 detection.</p>
+        <button>Coming Soon</button>
+      </div>
+
+      <div class="card">
+        <h3>Thyroid Profile</h3>
+        <p>TSH, T3, T4 to monitor thyroid health.</p>
+        <button>Coming Soon</button>
+      </div>
+
+      <div class="card">
+        <h3>Lipid Profile</h3>
+        <p>Check cholesterol and triglycerides levels.</p>
+        <button>Coming Soon</button>
+      </div>
+
+      <div class="card">
+        <h3>Liver Function Test</h3>
+        <p>Includes ALT, AST, Bilirubin & more.</p>
+        <button>Coming Soon</button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 EmediLab. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient - EmediLab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='patient.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Emedi<span>Lab</span></h1>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="{{ url_for('book') }}">Book Now</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <section>
+      <h2>Welcome to EmediLab</h2>
+      <p>EmediLab is your digital partner for efficient and modern medical services. It connects patients with doctors, lab technicians, and more, all in one place.</p>
+    </section>
+
+    <section id="about">
+      <h2>About EmediLab</h2>
+      <p>EmediLab is an integrated healthcare platform that streamlines communication and medical record management between patients, doctors, and labs.</p>
+    </section>
+
+    <section>
+      <h2>Benefits of EmediLab</h2>
+      <ul>
+        <li>Easy online appointment booking</li>
+        <li>Access to lab reports anytime</li>
+        <li>Secure and organized medical history</li>
+        <li>Time-saving and user-friendly experience</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: support@emedilab.com</p>
+      <p>Phone: +91 98765 43210</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EmediLab. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>

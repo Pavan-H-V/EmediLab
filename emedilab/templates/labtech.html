@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lab Technician Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    .button-group {
+      margin-bottom: 20px;
+    }
+    .button-group button {
+      padding: 10px 15px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    th {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h2>Welcome, {{ user }} (Lab Technician)</h2>
+  
+  <div class="button-group">
+    <form method="get" action="{{ url_for('labtech_appointments') }}">
+      <button name="test" value="Blood Test">Blood Test Appointments</button>
+      <button name="test" value="Urine Test">Urine Test Appointments</button>
+      <button name="test" value="COVID Test">COVID Test Appointments</button>
+      <button name="test" value="Thyroid Test">Thyroid Test Appointments</button>
+      <button name="test" value="Lipid Test">Lipid Test Appointments</button>
+      <button name="test" value="Liver Function Test">Liver Function Test Appointments</button>
+    </form>
+  </div>
+
+  <table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Patient Name</th>
+      <th>Test Name</th>
+      <th>Test Type</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for appt in appointments %}
+    <tr>
+      <td>{{ appt.id }}</td>
+      <td>{{ appt.fullname }}</td>
+      <td>{{ appt.test_name }}</td>
+      <td>{{ appt.test_type }}</td>
+      <td>{{ appt.appointment_date }}</td>
+      <td>{{ appt.status }}</td>
+      <td>
+        {% if appt.status == 'Pending' %}
+        <form method="POST" action="{{ url_for('update_status') }}" style="display:inline;">
+          <input type="hidden" name="appointment_id" value="{{ appt.id }}">
+          <input type="hidden" name="new_status" value="Approved">
+          <button type="submit">Approve</button>
+        </form>
+        <form method="POST" action="{{ url_for('update_status') }}" style="display:inline;">
+          <input type="hidden" name="appointment_id" value="{{ appt.id }}">
+          <input type="hidden" name="new_status" value="Rejected">
+          <button type="submit" style="background-color:red; color:white;">Reject</button>
+        </form>
+        {% else %}
+        {{ appt.status }}
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</body>
+</html>

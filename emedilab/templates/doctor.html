@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f3f3f3; padding: 20px; }
+    h1 { color: #333; }
+    .button-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .button-group form { display: inline; }
+    .button-group button {
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .appointments { margin-top: 20px; background: #fff; padding: 20px; border-radius: 5px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Welcome, Dr. {{ user }}</h1>
+  <div class="button-group">
+    {% for test in ['Blood Test', 'Urine Test', 'Covid Test', 'Thyroid Test', 'Lipid Test', 'Liver Function Test'] %}
+      <form method="get" action="{{ url_for('doctor_appointments') }}">
+        <input type="hidden" name="test_name" value="{{ test }}">
+        <button type="submit">{{ test }}</button>
+      </form>
+    {% endfor %}
+  </div>
+
+  {% if appointments %}
+    <div class="appointments">
+      <h2>{{ selected_test }} - Approved Appointments</h2>
+      <table>
+        <tr>
+          <th>Full Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Appointment Date</th>
+        </tr>
+        {% for appt in appointments %}
+        <tr>
+          <td>{{ appt.fullname }}</td>
+          <td>{{ appt.age }}</td>
+          <td>{{ appt.gender }}</td>
+          <td>{{ appt.appointment_date }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  {% endif %}
+</body>
+</html>

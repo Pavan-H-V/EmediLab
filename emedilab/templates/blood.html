@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blood Tests - EmediLab</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f8f9fa, #e0f7fa);
+    }
+
+    header {
+      background-color: #0077b6;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #0077b6;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+      margin: 8px 0;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+      color: #28a745;
+      margin-top: 5px;
+    }
+
+    .card button {
+      margin-top: 10px;
+      background-color: #0077b6;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .card button:hover {
+      background-color: #005f8f;
+    }
+
+    footer {
+      background-color: #0077b6;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Blood Testing Services</h1>
+  </header>
+
+  <div class="container">
+    <div class="cards">
+
+      <div class="card">
+        <h3>Complete Blood Count (CBC)</h3>
+        <p>Checks overall health and detects various disorders like anemia and infection.</p>
+        <p class="price">₹299</p>
+        <a href="{{ url_for('testregister') }}"><button>Book Your Appointment</button></a>
+      </div>
+
+      <div class="card">
+        <h3>Lipid Profile</h3>
+        <p>Measures cholesterol and triglyceride levels to evaluate heart health.</p>
+        <p class="price">₹499</p>
+        <a href="{{ url_for('testregister') }}"><button>Book Your Appointment</button></a>
+      </div>
+
+      <div class="card">
+        <h3>Blood Sugar Test</h3>
+        <p>Used to diagnose and monitor diabetes and blood sugar levels.</p>
+        <p class="price">₹199</p>
+        <a href="{{ url_for('testregister') }}"><button>Book Your Appointment</button></a>
+      </div>
+
+      <div class="card">
+        <h3>Liver Function Test (LFT)</h3>
+        <p>Evaluates liver enzymes and proteins to check liver performance.</p>
+        <p class="price">₹599</p>
+        <a href="{{ url_for('testregister') }}"><button>Book Your Appointment</button></a>
+      </div>
+
+      <div class="card">
+        <h3>Thyroid Profile</h3>
+        <p>Analyzes T3, T4, and TSH to assess thyroid gland function.</p>
+        <p class="price">₹449</p>
+        <a href="{{ url_for('testregister') }}"><button>Book Your Appointment</button></a>
+      </div>
+
+      <div class="card">
+        <h3>Vitamin D Test</h3>
+        <p>Checks the level of Vitamin D in the body to support bone health.</p>
+        <p class="price">₹799</p>
+        <a href="{{ url_for('testregister') }}"><button>Book Your Appointment</button></a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 EmediLab | Accurate. Trusted. Reliable.
+  </footer>
+
+</body>
+</html>

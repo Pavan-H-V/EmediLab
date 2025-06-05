@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Your Lab Test</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='register_test.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Book Blood Test Appointment</h1>
+    <form method="POST" action="/testregister">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" required>
+        <option value="">-- Select Gender --</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <!-- Constant test_name -->
+      <input type="hidden" name="test_name" value="Blood Test">
+
+      <label for="test_type">Select Test Type</label>
+      <select id="test_type" name="test_type" required>
+        <option value="">Select The Test Type</option>
+        <option value="Complete Blood Count">Complete Blood Count</option>
+        <option value="Blood Sugar">Blood Sugar</option>
+        <option value="Lipid Profile">Lipid Profile</option>
+        <option value="Thyroid Test">Thyroid Test</option>
+        <option value="Vitamin D Test">Vitamin D Test</option>
+      </select>
+
+      <label for="appointment_date">Appointment Date</label>
+      <input type="date" id="appointment_date" name="appointment_date" required>
+
+      <!-- Status (hidden input for "Pending") -->
+      <label>Status</label>
+      <select name="status_display" disabled>
+        <option selected>Pending</option>
+      </select>
+      <input type="hidden" name="status" value="Pending">
+
+      <button type="submit">Submit Appointment</button>
+    </form>
+  </div>
+</body>
+</html>

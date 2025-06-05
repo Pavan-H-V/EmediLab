@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Appointments</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f0f4ff, #e0f7fa);
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #005b96;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background: #f5faff;
+      margin: 15px 0;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 6px solid #1976d2;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    li strong {
+      font-size: 18px;
+      color: #1976d2;
+    }
+
+    .info-line {
+      margin-top: 6px;
+    }
+
+    .no-records {
+      text-align: center;
+      font-size: 18px;
+      padding: 20px;
+      background: #fff3cd;
+      border: 1px solid #ffeeba;
+      border-radius: 8px;
+      color: #856404;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 30px auto 0;
+      text-align: center;
+      background-color: #444;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      width: fit-content;
+    }
+
+    .back-btn:hover {
+      background-color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Appointments</h1>
+
+    {% if appointments %}
+  <ul>
+    {% for app in appointments %}
+      <li>
+        <strong>{{ app.test_name }}</strong>
+        <div class="info-line">Date: {{ app.appointment_date }}</div>
+        <div class="info-line">Status: {{ app.status }}</div>
+        <div class="info-line">Patient: {{ app.fullname }} | Age: {{ app.age }} | Gender: {{ app.gender }}</div>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <div class="no-records">No appointments found</div>
+{% endif %}
+    <a class="back-btn" href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+  </div>
+</body>
+</html>

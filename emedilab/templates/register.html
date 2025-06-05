@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1 class="brand">Emedi<span>LAb</span></h1>
+    <h2>Registration</h2>
+    <form method="POST" class="form-box">
+      <input type="text" name="username" placeholder="Username" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <select name="role" required>
+        <option value="">Select Role</option>
+        <option value="patient" selected>Patient</option>
+      </select>
+      <button type="submit">Register</button>
+    </form>
+    <p class="link">Do you have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+  </div>
+</body>
+</html>

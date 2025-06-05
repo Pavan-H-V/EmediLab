@@ -1,0 +1,77 @@
+/* style.css */
+
+body {
+  background-image: url('/static/assets/images/Login.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #ffffffee; /* semi-transparent */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  text-align: center;
+}
+
+h1.brand {
+  font-size: 28px;
+  color: #0083b0;
+  margin-bottom: 10px;
+}
+
+h1 span {
+  color: #005f7a;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 22px;
+}
+
+.form-box input,
+.form-box select,
+.form-box button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.form-box button {
+  background-color: #0083b0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.form-box button:hover {
+  background-color: #005f7a;
+}
+
+.link {
+  margin-top: 15px;
+}
+
+.link a {
+  color: #0083b0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
